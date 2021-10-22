@@ -9,24 +9,24 @@ function Header() {
       </Logo>
       <Menu>
         <li>
-          <a href="">Model S</a>
+          <a href="#model-s">Model S</a>
         </li>
         <li>
-          <a href="">Model 3</a>
+          <a href="#model-3">Model 3</a>
         </li>
         <li>
-          <a href="">Model X</a>
+          <a href="#model-x">Model X</a>
         </li>
         <li>
-          <a href="">Model Y</a>
+          <a href="#model-y">Model Y</a>
         </li>
       </Menu>
       <RightMenu>
         <li>
-          <a href="">Shop</a>
+          <a href="#">Shop</a>
         </li>
         <li>
-          <a href="">Account</a>
+          <a href="#">Account</a>
         </li>
         <HamMenu>
           <MenuIcon />
@@ -53,25 +53,40 @@ const Logo = styled.div``;
 const Menu = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
   font-weight: 700;
+
   @media only screen and (max-width: 710px) {
     display: none;
   }
 
-  li {
+  li,
+  a {
     text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: black;
+  }
+
+  li:hover {
+    background-color: #a2abb5;
   }
 `;
 const RightMenu = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
   font-weight: 700;
-  li {
+  li,
+  a {
     text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: black;
+  }
+
+  li:hover {
+    background-color: #a2abb5;
   }
 `;
 const HamMenu = styled.div`

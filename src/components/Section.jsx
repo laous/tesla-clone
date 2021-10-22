@@ -1,28 +1,32 @@
 import React from "react";
-
 import styled from "styled-components";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Fade from "react-reveal/Fade";
 
-function Section({ title, description, image }) {
+function Section({ title, description, image, leftText, rightText }) {
   const imageUrl = "./images/" + image;
   return (
     <Container img={imageUrl}>
-      <Text>
-        <h1>{title}</h1>
-        <p> {description} </p>
-      </Text>
+      <Fade bottom>
+        <Text>
+          <h1>{title}</h1>
+          <p> {description} </p>
+        </Text>
+      </Fade>
+
       <BottomWrapper>
-        <Buttons>
-          <ButtonLeft>
-            <a href="#">Left Button</a>
-          </ButtonLeft>
-          <ButtonRight>
-            <a href="#">Right Button</a>
-          </ButtonRight>
-        </Buttons>
-        <Next>
-          <KeyboardArrowDownIcon />
-        </Next>
+        <Fade bottom>
+          <Buttons>
+            <ButtonLeft>
+              <a href="#">{leftText}</a>
+            </ButtonLeft>
+            <ButtonRight>
+              <a href="#">{rightText}</a>
+            </ButtonRight>
+          </Buttons>
+        </Fade>
+
+        <Next>{title == "Model S" && <KeyboardArrowDownIcon />}</Next>
       </BottomWrapper>
     </Container>
   );
@@ -32,6 +36,7 @@ export default Section;
 
 const Container = styled.div`
   height: 100vh;
+  min-height: 100vh;
   background: ${(props) => `url(${props.img}) no-repeat top center`};
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,7 +54,7 @@ const Text = styled.div`
 const BottomWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 3rem;
   margin: 1rem;
