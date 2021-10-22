@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: Roboto;
   color: black;
+  scroll-behavior: smooth;
 }
 
 a {

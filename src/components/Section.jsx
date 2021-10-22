@@ -3,12 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-function Section() {
+function Section({ title, description, image }) {
+  const imageUrl = "./images/" + image;
   return (
-    <Container>
+    <Container img={imageUrl}>
       <Text>
-        <h1>Model X</h1>
-        <p> Order Online for Touchless Delivery </p>
+        <h1>{title}</h1>
+        <p> {description} </p>
       </Text>
       <BottomWrapper>
         <Buttons>
@@ -31,14 +32,14 @@ export default Section;
 
 const Container = styled.div`
   height: 100vh;
-  background-image: url("./images/model-x.jpg");
+  background: ${(props) => `url(${props.img}) no-repeat top center`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 150px;
   align-items: center;
 `;
 const Text = styled.div`
@@ -82,7 +83,6 @@ const ButtonRight = styled(ButtonLeft)`
   }
 `;
 const Next = styled.div`
-  cursor: pointer;
   animation: scroll-down 1s infinite ease-in;
 
   * {

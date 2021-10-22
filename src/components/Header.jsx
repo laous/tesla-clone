@@ -9,16 +9,16 @@ function Header() {
       </Logo>
       <Menu>
         <li>
-          <a href="">Model X</a>
-        </li>
-        <li>
-          <a href="">Model Y</a>
-        </li>
-        <li>
           <a href="">Model S</a>
         </li>
         <li>
           <a href="">Model 3</a>
+        </li>
+        <li>
+          <a href="">Model X</a>
+        </li>
+        <li>
+          <a href="">Model Y</a>
         </li>
       </Menu>
       <RightMenu>
@@ -39,7 +39,7 @@ function Header() {
 export default Header;
 
 const Container = styled.div`
-  height: 50px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,6 +59,10 @@ const Menu = styled.div`
   @media only screen and (max-width: 710px) {
     display: none;
   }
+
+  li {
+    text-transform: uppercase;
+  }
 `;
 const RightMenu = styled.div`
   display: flex;
@@ -66,6 +70,9 @@ const RightMenu = styled.div`
   gap: 1rem;
   align-items: center;
   font-weight: 700;
+  li {
+    text-transform: uppercase;
+  }
 `;
 const HamMenu = styled.div`
   cursor: pointer;
