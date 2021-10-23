@@ -2,33 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Fade from "react-reveal/Fade";
+import Footer from "./Footer";
 
-function Section({ title, description, image, leftText, rightText }) {
+function Section({ title, description, image, leftText, rightText, footer }) {
   const imageUrl = "./images/" + image;
   return (
-    <Container img={imageUrl}>
-      <Fade bottom>
-        <Text>
-          <h1>{title}</h1>
-          <p> {description} </p>
-        </Text>
-      </Fade>
-
-      <BottomWrapper>
+    <>
+      <Container img={imageUrl}>
         <Fade bottom>
-          <Buttons>
-            <ButtonLeft>
-              <a href="#">{leftText}</a>
-            </ButtonLeft>
-            <ButtonRight>
-              <a href="#">{rightText}</a>
-            </ButtonRight>
-          </Buttons>
+          <Text>
+            <h1>{title}</h1>
+            <p> {description} </p>
+          </Text>
         </Fade>
 
-        <Next>{title == "Model S" && <KeyboardArrowDownIcon />}</Next>
-      </BottomWrapper>
-    </Container>
+        <BottomWrapper>
+          <Fade bottom>
+            <Buttons>
+              <ButtonLeft>
+                <a href="#">{leftText}</a>
+              </ButtonLeft>
+              <ButtonRight>
+                <a href="#">{rightText}</a>
+              </ButtonRight>
+            </Buttons>
+          </Fade>
+
+          <Next>{title === "Model S" && <KeyboardArrowDownIcon />}</Next>
+          {footer && <Footer />}
+        </BottomWrapper>
+      </Container>
+    </>
   );
 }
 

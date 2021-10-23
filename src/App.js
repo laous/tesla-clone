@@ -49,8 +49,8 @@ function App() {
         id="model-y"
         leftText="Order Now"
         rightText="Learn More"
+        footer={true}
         />
-        <Footer />
     </div>
   );
 }

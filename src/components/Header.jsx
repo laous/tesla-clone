@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from "@mui/icons-material/Clear";
+
 function Header() {
+  const [sidebarActive, setSidebarActive] = useState(false);
   return (
     <Container>
       <Logo>
@@ -29,9 +32,70 @@ function Header() {
           <a href="#">Account</a>
         </li>
         <HamMenu>
-          <MenuIcon />
+          <MenuIcon onClick={() => setSidebarActive(true)} />
         </HamMenu>
       </RightMenu>
+      <SideContainer side={sidebarActive}>
+        <CloseContainer>
+          <ClearIcon
+            onClick={() => {
+              setSidebarActive(false);
+              console.log(sidebarActive);
+            }}
+          />
+        </CloseContainer>
+
+        <Sidebar>
+          <li>
+            <a href="#"></a>Model S
+          </li>
+          <li>
+            <a href="#"></a>Model 3
+          </li>
+          <li>
+            <a href="#"></a>Model X
+          </li>
+          <li>
+            <a href="#"></a>Model Y
+          </li>
+          <li>
+            <a href="#"></a>Cybertruck
+          </li>
+          <li>
+            <a href="#">Solar Panel</a>
+          </li>
+          <li>
+            <a href="#"></a>Existing Inventory
+          </li>
+          <li>
+            <a href="#">Utilities</a>
+          </li>
+          <li>
+            <a href="#"></a>Model S
+          </li>
+          <li>
+            <a href="#"></a>Model 3
+          </li>
+          <li>
+            <a href="#"></a>Model X
+          </li>
+          <li>
+            <a href="#"></a>Model Y
+          </li>
+          <li>
+            <a href="#"></a>Cybertruck
+          </li>
+          <li>
+            <a href="#">Solar Panel</a>
+          </li>
+          <li>
+            <a href="#"></a>Existing Inventory
+          </li>
+          <li>
+            <a href="#">Utilities</a>
+          </li>
+        </Sidebar>
+      </SideContainer>
     </Container>
   );
 }
@@ -48,6 +112,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 `;
 const Logo = styled.div``;
 const Menu = styled.div`
@@ -91,4 +156,42 @@ const RightMenu = styled.div`
 `;
 const HamMenu = styled.div`
   cursor: pointer;
+`;
+const SideContainer = styled.div`
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: white;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: transform 0.5s ease;
+  transform: ${(props) => (props.side ? "translateX(0%)" : "translateX(100%)")};
+`;
+
+const Sidebar = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-top: 3rem;
+  * {
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+`;
+
+const CloseContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  * {
+    cursor: pointer;
+  }
 `;
