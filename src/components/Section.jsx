@@ -7,32 +7,30 @@ import Footer from "./Footer";
 function Section({ title, description, image, leftText, rightText, footer }) {
   const imageUrl = "./images/" + image;
   return (
-    <>
-      <Container img={imageUrl}>
+    <Container img={imageUrl}>
+      <Fade bottom>
+        <Text>
+          <h1>{title}</h1>
+          <p> {description} </p>
+        </Text>
+      </Fade>
+
+      <BottomWrapper>
         <Fade bottom>
-          <Text>
-            <h1>{title}</h1>
-            <p> {description} </p>
-          </Text>
+          <Buttons>
+            <ButtonLeft>
+              <a href="#">{leftText}</a>
+            </ButtonLeft>
+            <ButtonRight>
+              <a href="#">{rightText}</a>
+            </ButtonRight>
+          </Buttons>
         </Fade>
 
-        <BottomWrapper>
-          <Fade bottom>
-            <Buttons>
-              <ButtonLeft>
-                <a href="#">{leftText}</a>
-              </ButtonLeft>
-              <ButtonRight>
-                <a href="#">{rightText}</a>
-              </ButtonRight>
-            </Buttons>
-          </Fade>
-
-          <Next>{title === "Model S" && <KeyboardArrowDownIcon />}</Next>
-          {footer && <Footer />}
-        </BottomWrapper>
-      </Container>
-    </>
+        <Next>{title === "Model S" && <KeyboardArrowDownIcon />}</Next>
+        {footer && <Footer />}
+      </BottomWrapper>
+    </Container>
   );
 }
 
@@ -50,6 +48,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding-top: 150px;
   align-items: center;
+  scroll-snap-align: start;
 `;
 const Text = styled.div`
   text-align: center;
