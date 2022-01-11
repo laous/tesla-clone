@@ -4,10 +4,18 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Fade from "react-reveal/Fade";
 import Footer from "./Footer";
 
-function Section({ title, description, image, leftText, rightText, footer }) {
+function Section({
+  title,
+  description,
+  image,
+  leftText,
+  rightText,
+  footer,
+  id,
+}) {
   const imageUrl = "./images/" + image;
   return (
-    <Container img={imageUrl}>
+    <Container img={imageUrl} id={id}>
       <Fade bottom>
         <Text>
           <h1>{title}</h1>
