@@ -25,12 +25,8 @@ function Header() {
         </li>
       </Menu>
       <RightMenu>
-        <li>
-          <a href="#">Shop</a>
-        </li>
-        <li>
-          <a href="#">Account</a>
-        </li>
+        <li>Shop</li>
+        <li>Account</li>
         <HamMenu>
           <MenuIcon onClick={() => setSidebarActive(true)} />
         </HamMenu>
@@ -47,53 +43,29 @@ function Header() {
 
         <Sidebar>
           <li>
-            <a href="#"></a>Model S
+            <a href="#model-s">Model S</a>
           </li>
           <li>
-            <a href="#"></a>Model 3
+            <a href="#model-3">Model 3</a>
           </li>
           <li>
-            <a href="#"></a>Model X
+            <a href="#model-x">Model X</a>
           </li>
           <li>
-            <a href="#"></a>Model Y
+            <a href="#model-y">Model Y</a>
           </li>
-          <li>
-            <a href="#"></a>Cybertruck
-          </li>
-          <li>
-            <a href="#">Solar Panel</a>
-          </li>
-          <li>
-            <a href="#"></a>Existing Inventory
-          </li>
-          <li>
-            <a href="#">Utilities</a>
-          </li>
-          <li>
-            <a href="#"></a>Model S
-          </li>
-          <li>
-            <a href="#"></a>Model 3
-          </li>
-          <li>
-            <a href="#"></a>Model X
-          </li>
-          <li>
-            <a href="#"></a>Model Y
-          </li>
-          <li>
-            <a href="#"></a>Cybertruck
-          </li>
-          <li>
-            <a href="#">Solar Panel</a>
-          </li>
-          <li>
-            <a href="#"></a>Existing Inventory
-          </li>
-          <li>
-            <a href="#">Utilities</a>
-          </li>
+          <li>Cybertruck</li>
+          <li>Solar Panel</li>
+          <li>Existing Inventory</li>
+          <li>Utilities</li>
+          <li>Model S</li>
+          <li>Model 3</li>
+          <li>Model X</li>
+          <li>Model Y</li>
+          <li>Cybertruck</li>
+          <li>Solar Panel</li>
+          <li>Existing Inventory</li>
+          <li>Utilities</li>
         </Sidebar>
       </SideContainer>
     </Container>

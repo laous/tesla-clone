@@ -18,12 +18,8 @@ function Section({ title, description, image, leftText, rightText, footer }) {
       <BottomWrapper>
         <Fade bottom>
           <Buttons>
-            <ButtonLeft>
-              <a href="#">{leftText}</a>
-            </ButtonLeft>
-            <ButtonRight>
-              <a href="#">{rightText}</a>
-            </ButtonRight>
+            <ButtonLeft>{leftText}</ButtonLeft>
+            <ButtonRight>{rightText}</ButtonRight>
           </Buttons>
         </Fade>
 
@@ -78,7 +74,7 @@ const ButtonLeft = styled.div`
   opacity: 0.75;
   border-radius: 40px;
   cursor: pointer;
-  a {
+  * {
     color: white;
   }
 `;
@@ -86,7 +82,7 @@ const ButtonRight = styled(ButtonLeft)`
   background-color: white;
   opacity: 0.65;
 
-  a {
+  * {
     color: black;
   }
 `;

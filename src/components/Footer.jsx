@@ -4,27 +4,13 @@ import styled from "styled-components";
 function Footer() {
   return (
     <Wrapper>
-      <li>
-        <a href="#">Tesla-2021</a>
-      </li>
-      <li>
-        <a href="#">Privacy</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-      <li>
-        <a href="#">Careers</a>
-      </li>
-      <li>
-        <a href="#">News</a>
-      </li>
-      <li>
-        <a href="#">Engage</a>
-      </li>
-      <li>
-        <a href="#">Locations</a>
-      </li>
+      <li>Tesla-2021</li>
+      <li>Privacy</li>
+      <li>Contact</li>
+      <li>Careers</li>
+      <li>News</li>
+      <li>Engage</li>
+      <li>Locations</li>
     </Wrapper>
   );
 }
@@ -40,9 +26,10 @@ const Wrapper = styled.div`
   right: 0;
   height: 70px;
   gap: 0.5rem;
-  a {
+  li {
     color: white;
     padding: 5px;
+    cursor: pointer;
     :hover {
       text-decoration: underline;
     }
