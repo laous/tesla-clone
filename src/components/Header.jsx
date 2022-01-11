@@ -120,6 +120,7 @@ const RightMenu = styled.div`
     padding: 5px 10px;
     border-radius: 20px;
     color: black;
+    cursor: pointer;
   }
 
   li:hover {
