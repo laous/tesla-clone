@@ -76,6 +76,7 @@ export default Header;
 
 const Container = styled.div`
   height: 80px;
+  max-width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -144,8 +145,9 @@ const SideContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: transform 0.5s ease;
-  transform: ${(props) => (props.side ? "translateX(0%)" : "translateX(100%)")};
+  transition: all 0.5s ease;
+  transform: ${(props) => (props.side ? "translateY(0%)" : "translateX(100%)")};
+  /* display: ${(props) => (props.side ? "flex" : "none")}; */
 `;
 
 const Sidebar = styled.div`

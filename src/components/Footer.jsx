@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   bottom: 0;
   left: 0;
   right: 0;
