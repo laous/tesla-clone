@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  width: 100%;
+  max-width: 100vw;
   scroll-snap-type: proximity;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
